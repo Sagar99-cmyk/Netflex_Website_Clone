@@ -1,0 +1,294 @@
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Top Gradient Bar */
+.top-gradient {
+    height: 6px;
+    width: 100%;
+    background: linear-gradient(90deg, #e50914, #db0000, #b81d24);
+    background-size: 300% 300%;
+    animation: gradientScroll 6s ease infinite;
+}
+
+@keyframes gradientScroll {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    height: 28px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.lang-select {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.btn-signin {
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.btn-red {
+    background: #e50914;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('images/hero-bg.jpg') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+}
+
+.email-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.email-form input {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    border: none;
+    border-radius: 2px;
+}
+
+.email-form .btn-red {
+    padding: 15px 25px;
+}
+
+/* Feature Sections */
+.feature {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+    gap: 50px;
+}
+
+.feature.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.feature-text p {
+    font-size: 1.1rem;
+}
+
+.feature-media {
+    flex: 1;
+    max-width: 500px;
+}
+
+/* FAQ Section */
+.faq {
+    background: #000;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.faq h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.accordion-btn {
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    background: #303030;
+    color: #fff;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-btn::after {
+    content: '+';
+    font-size: 1.5rem;
+}
+
+.accordion-btn.open::after {
+    content: '–';
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    background: #000;
+    transition: max-height 0.3s ease;
+}
+
+.panel p {
+    padding: 0 20px 20px;
+    font-size: 1rem;
+}
+
+/* Footer */
+.site-footer {
+    background: #111;
+    padding: 40px 20px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-column h4 {
+    margin-bottom: 15px;
+}
+
+.footer-column ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.footer-column ul li a {
+    text-decoration: none;
+    font-size: 0.9rem;
+    color: #737373;
+}
+
+.footer-lang {
+    margin-top: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 5px;
+    font-size: 0.9rem;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+    color: #737373;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .feature.reverse {
+        flex-direction: column;
+    }
+
+    .feature-media {
+        margin-top: 20px;
+    }
+}
